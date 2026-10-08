@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Sets the text displayed on your browser tab -->
+    <title>V-B TIMETABLE</title>
+    <style>
+        /* Basic grid lines setup */
+        table {
+            border-collapse: collapse; /* Prevents double border lines */
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black; /* Simple thin black border line */
+            padding: 8px; /* Adds breathing room inside the boxes */
+            text-align: center; /* Centers all text horizontally */
+        }
+
+        /* Color classes matching your exact instructions */
+        .header-day {
+            background-color: #f3e5f5; /* Very light purple color for day/time labels */
+            font-weight: bold;
+        }
+        
+        .regular-class {
+            background-color: #ffffe0; /* Light Yellow for standard class boxes */
+        }
+        
+        .lab-class {
+            background-color: #ccffcc; /* Clean Light Green for lab sessions */
+        }
+        
+        .break-class {
+            background-color: #f3e5f5; /* Very light purple color for the tea break */
+            font-weight: bold;
+        }
+
+        .project-class {
+            background-color: #e0f7fa; /* Sky Blue for project slots */
+            font-weight: bold;
+        }
+        
+        .empty-cell {
+            background-color: #ffffe0; /* Light Yellow for blank slots to match regular cells */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <center>
+        <h2>Bangalore Institute of Technology</h2>
+        <h3>Department of CSE</h3>
+        <p><b>V Sem, B Section Class Timetable</b></p>
+    </center>
+
+    <!-- ==================== TIMETABLE ==================== -->
+    <table>
+        <!-- Time Slot Columns -->
+        <tr>
+            <th class="header-day">DAYS / TIME</th>
+            <th class="header-day">8.00 - 9.00</th> 
+            <th class="header-day">9.00 - 10.00</th>
+            <th class="header-day">10.00 - 10.30</th> <!-- Tea Break Column -->
+            <th class="header-day">10.30 - 11.30</th> 
+            <th class="header-day">11.30 - 12.30</th>
+            <th class="header-day">12.30 - 1.30</th>
+            <th class="header-day">1.30 - 2.30</th>
+            <th class="header-day">2.30 - 3.30</th>
+            <th class="header-day">3.30 - 4.30</th>
+            <th class="header-day">4.30 - 5.30</th>
+        </tr>
+
+        <!-- Monday Row -->
+        <tr>
+            <th class="header-day">MON</th>
+            <td class="regular-class">CNS<br>KNP<br>523</td> 
+            <td class="regular-class">TOC<br>SHG<br>523</td>
+            
+            <!-- rowspan="6" merges this very light purple break box down through all 6 days -->
+            <td class="break-class" rowspan="6">T<br>E<br>A<br><br>B<br>R<br>E<br>A<br>K</td>
+            
+            <td class="regular-class">AI<br>MJ<br>523</td>
+            <td class="regular-class">SE<br>MH<br>523</td>
+            <td class="regular-class">RM<br>SE<br>523</td>
+            <td class="regular-class">SE<br>MJ<br>521</td>
+            <!-- colspan="2" merges 2:30 to 4:30 for Project Work (Sky Blue) -->
+            <td class="project-class" colspan="2">PROJECT WORK</td>
+            <td class="empty-cell">-</td>
+        </tr>
+
+        <!-- Tuesday Row -->
+        <tr>
+            <th class="header-day">TUE</th>
+            <td class="regular-class">TOC<br>SHG<br>523</td>
+            <td class="regular-class">SE<br>MH<br>523</td>
+            <!-- Tea Break column is skipped due to rowspan -->
+            <td class="regular-class">TOC<br>SHG<br>523</td>
+            <td class="regular-class">AI<br>MJ<br>523</td>
+            <td class="regular-class">AI<br>MJ<br>521</td>
+            <td class="regular-class">MJ<br>AI<br>521</td>
+            <td class="regular-class">SHG<br>TOC<br>521</td>
+            <td class="regular-class">KNP<br>CNS<br>521</td>
+            <td class="empty-cell">-</td>
+        </tr>
+
+        <!-- Wednesday Row -->
+        <tr>
+            <th class="header-day">WED</th>
+            <td class="regular-class">RM<br>SE<br>523</td>
+            <td class="regular-class">SE<br>MH<br>523</td>
+            <!-- Tea Break column is skipped due to rowspan -->
+            <td class="regular-class">SHG<br>TOC<br>523</td>
+            <td class="regular-class">MJ<br>AI<br>523</td>
+            <td class="empty-cell">-</td>
+            <!-- colspan="3" merges 3 slots for the 3-hour light green Lab session -->
+            <td class="lab-class" colspan="3">WT Lab / CNS Lab<br>Batch B1+B2<br>Labs 503 / 527A</td>
+            <td class="empty-cell">-</td>
+        </tr>
+
+        <!-- Thursday Row -->
+        <tr>
+            <th class="header-day">THU</th>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <!-- Tea Break column is skipped due to rowspan -->
+            <td class="regular-class">Online EVS<br>KRS<br></td>
+             <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+        </tr>
+
+        <!-- Friday Row -->
+        <tr>
+            <th class="header-day">FRI</th>
+            <!-- colspan="2" merges the morning classes for the light green Lab session -->
+            <td class="lab-class" colspan="2">WT Lab / CNS Lab<br>Batch B3+B4<br>Labs 503 / 527A</td>
+            <!-- Tea Break column is skipped due to rowspan -->
+            <td class="regular-class">TOC<br>SHG<br>527C</td>
+            <td class="regular-class">CNS<br>KNP<br>527C</td>
+            <td class="empty-cell">-</td>
+             <td class="regular-class">RM<br>527C</td>
+             <td class="regular-class">SE<br>MH<br>527C</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+        </tr>
+
+        <!-- Saturday Row -->
+        <tr>
+            <th class="header-day">SAT</th>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <!-- Tea Break column is skipped due to rowspan -->
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <td class="empty-cell">-</td>
+            <!-- Saturday Project Slot in Sky Blue: 2:30 to 4:30 -->
+            <td class="project-class" colspan="2">PROJECT WORK</td>
+            <td class="empty-cell">-</td>
+        </tr>
+    </table>
+
+</body>
+</html>
